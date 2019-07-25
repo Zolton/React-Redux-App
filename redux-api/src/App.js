@@ -61,19 +61,7 @@ import React, { useState, useContext, useEffect } from "react";
 import axios from "axios";
 
 function App() {
-  const [rickData, setRickData] = useState();
 
-  useEffect(() => {
-    axios
-      .get("https://rickandmortyapi.com/api/character/")
-      .then(res => {
-        console.log(res);
-        setRickData(res.data.results);
-      })
-      .catch(error => {
-        console.log("Danger Will Robinson", error);
-      });
-  }, []);
 
   return (
     <div>
