@@ -11,10 +11,10 @@ import rickContext from "./context";
 //const store = createStore(reducer, applyMiddleware(thunk));
 
 ReactDOM.render(
- // <Provider store={store}>
- <rickContext.Provider>
+  // <Provider store={store}>
+  <rickContext.Provider>
     <App />
-    </rickContext.Provider>,
- // </Provider>,
+  </rickContext.Provider>,
+  // </Provider>,
   document.getElementById("root")
 );
