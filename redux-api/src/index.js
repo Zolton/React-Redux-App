@@ -11,7 +11,8 @@ import axios from "axios"
 
 //const store = createStore(reducer, applyMiddleware(thunk));
 
-useEffect(() => {
+
+exportuseEffect(() => {
   axios
     .get("https://rickandmortyapi.com/api/character/")
     .then(res => {
@@ -23,12 +24,15 @@ useEffect(() => {
     });
 }, []);
 
+export const [ricksFabledSafe] = useState(rickData)
 
-const [rickData, setRickData] = useState();
+
+export const [rickData, setRickData] = useState();
+console.log(rickData)
 
 ReactDOM.render(
   // <Provider store={store}>
-  <rickContext.Provider value={rickData}>
+  <rickContext.Provider value={ricksFabledSafe}>
     <App />
   </rickContext.Provider>,
   // </Provider>,
