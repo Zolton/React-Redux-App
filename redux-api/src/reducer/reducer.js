@@ -1,5 +1,10 @@
 import React from "react";
-import { FETCH_START, FETCH_FAIL, FETCH_SUCCESS, fetchRick } from "../action/action";
+import {
+  FETCH_START,
+  FETCH_FAIL,
+  FETCH_SUCCESS,
+  fetchRick
+} from "../action/action";
 
 export const initialState = {
   error: "",
