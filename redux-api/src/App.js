@@ -59,28 +59,21 @@
 
 import React, { useState, useContext, useEffect } from "react";
 import axios from "axios";
+//import {rickData} from "./index"
+import {rickContext} from "./index"
+
 
 function App() {
-  const [rickData, setRickData] = useState();
 
-  useEffect(() => {
-    axios
-      .get("https://rickandmortyapi.com/api/character/")
-      .then(res => {
-        console.log(res);
-        setRickData(res.data.results);
-      })
-      .catch(error => {
-        console.log("Danger Will Robinson", error);
-      });
-  }, []);
+const [ricksGiving, setRicksGiving] = useContext(rickContext)
+
 
   return (
     <div>
       Hello from App
-      {console.log(rickData)}
-      {rickData ? (
-        rickData.map(rick => (
+      {console.log(ricksGiving)}
+      {ricksGiving ? (
+        ricksGiving.map(rick => (
           <div className="rickytickytavy">
             <h3>Name: {rick.name}</h3>
             <img src={rick.image} />
